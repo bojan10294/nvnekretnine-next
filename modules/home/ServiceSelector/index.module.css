@@ -1,0 +1,6 @@
+.services a:hover img {
+  scale: 1.03;
+}
+.services a:hover h2 {
+  scale: 1.05;
+}

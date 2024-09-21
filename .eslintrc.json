@@ -1,0 +1,49 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb", "airbnb/hooks"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "sort-keys-fix"],
+
+  "rules": {
+    "comma-dangle": "off",
+    "object-curly-newline": "off",
+    "indent": "off",
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
+    "no-shadow": "off",
+    "react/function-component-definition": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/no-array-index-key": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "linebreak-style": "off",
+    "react/jsx-wrap-multilines": "off",
+    "operator-linebreak": "off",
+    "implicit-arrow-linebreak": "off",
+    "no-confusing-arrow": "off",
+    "no-unused-expressions": "off",
+    "react/button-has-type": "off",
+    "react/jsx-sort-props": "error",
+    "sort-keys-fix/sort-keys-fix": "error",
+    "consistent-return": "off",
+    "function-paren-newline": "off",
+    "max-len": "off",
+    "jsx-indent": "off",
+    "react/jsx-indent": "off"
+  }
+}

@@ -1,0 +1,27 @@
+.grid-layout .grid-headline {
+  grid-area: grid-headline;
+}
+
+.grid-layout .grid-content {
+  grid-area: grid-content;
+}
+
+.grid-layout .grid-image {
+  grid-area: grid-image;
+}
+
+.grid-layout {
+  grid-template-rows: min-content 1fr;
+  grid-template-areas:
+    'grid-headline'
+    'grid-image'
+    'grid-content';
+}
+
+@media only screen and (min-width: 768px) {
+  .grid-layout {
+    grid-template-areas:
+      'grid-headline grid-image'
+      'grid-content grid-image';
+  }
+}

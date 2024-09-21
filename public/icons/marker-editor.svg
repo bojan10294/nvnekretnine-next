@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 20.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 30 30"
+   xml:space="preserve"
+   sodipodi:docname="marker-editor.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs20">
+	
+	
+</defs><sodipodi:namedview
+   id="namedview18"
+   pagecolor="#505050"
+   bordercolor="#eeeeee"
+   borderopacity="1"
+   inkscape:pageshadow="0"
+   inkscape:pageopacity="0"
+   inkscape:pagecheckerboard="0"
+   showgrid="false"
+   inkscape:zoom="27.433333"
+   inkscape:cx="14.708384"
+   inkscape:cy="15.018226"
+   inkscape:window-width="1920"
+   inkscape:window-height="1009"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Layer_1" />
+<g
+   id="g4"
+   style="fill:#fe5000;fill-opacity:1">
+		<path
+   style="fill:#fe5000;fill-opacity:1"
+   d="M 15,28.9 C 13.4,25.9 7,19.5 5.1,15.4 4.5,14.1 4.1,12.7 4.1,11.2 4.2,5.7 9.1,1.1 15,1.1 c 5.9,0 10.9,4.6 10.9,10.1 0,1.5 -0.4,2.9 -1,4.2 v 0 C 23,19.5 16.6,25.9 15,28.9 Z"
+   id="path2" />
+	</g><g
+   id="g14"
+   style="stroke:#fe844c;stroke-opacity:1">
+		<path
+   style="fill:none;stroke:#fe844c;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;stroke-opacity:1"
+   d="M 5.1,15.4 C 4.5,14.1 4.1,12.7 4.1,11.2 4.2,5.7 9.1,1.1 15,1.1 c 5.9,0 10.9,4.6 10.9,10.1 0,1.5 -0.4,2.9 -1,4.2"
+   id="path6" />
+		
+			<line
+   style="fill:none;stroke:#fe844c;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;stroke-opacity:1"
+   x1="15.1"
+   y1="28.9"
+   x2="15.1"
+   y2="28.9"
+   id="line8" />
+		<path
+   style="fill:none;stroke:#fe844c;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;stroke-opacity:1"
+   d="M 5.1,15.4 C 7,19.5 13.4,25.9 15,28.9"
+   id="path10" />
+		<path
+   style="fill:none;stroke:#fe844c;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;stroke-opacity:1"
+   d="M 24.9,15.4 C 23,19.5 16.6,25.9 15,28.9 v 0 0"
+   id="path12" />
+	</g>
+</svg>

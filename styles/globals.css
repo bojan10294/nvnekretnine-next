@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .half-container {
+    width: 100%;
+    @apply w-full sm:max-w-[320px] md:max-w-[384px] lg:max-w-[512px] xl:max-w-[640px] 2xl:max-w-[768px];
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fbfbfb;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
+footer {
+  @apply bg-gray-light;
+}
+
+body > div > div {
+  @apply font-lato;
+}
+
+section {
+  @apply py-12 lg:py-16;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.marker {
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  transform: translateY(-20px);
+  background-repeat: no-repeat;
+  display: inline-block;
+  background-image: url('/icons/marker-editor.svg');
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  @apply !text-primary !hidden lg:!flex;
+}
+.swiper-pagination-bullet-active {
+  @apply !bg-primary;
+}

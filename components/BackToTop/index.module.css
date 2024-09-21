@@ -1,0 +1,25 @@
+.progress {
+  position: fixed;
+  bottom: 0px;
+  right: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.svg {
+  transform: rotate(-90deg);
+  width: 62px;
+  height: 62px;
+}
+
+.circle {
+  stroke-width: 1%;
+  @apply stroke-gray-500/60;
+  fill: none;
+}
+
+.indicator {
+  stroke-width: 3%;
+  @apply stroke-primary;
+  fill: none;
+}

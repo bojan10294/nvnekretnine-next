@@ -1,0 +1,47 @@
+i.icon {
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  min-width: 0.5rem;
+  min-height: 0.5rem;
+  display: inline-flex;
+}
+.icon.icon-logo {
+  mask: url('/icons/sirius-logo.svg') no-repeat center / contain;
+}
+.icon.icon-globe {
+  mask: url('/icons/globe.svg') no-repeat center / contain;
+}
+.icon.icon-chevron-down {
+  mask: url('/icons/chevron-down.svg') no-repeat center / contain;
+}
+.icon.icon-arrow {
+  mask: url('/icons/arrow.svg') no-repeat center / contain;
+}
+.icon.icon-whatsapp {
+  mask: url('/icons/whatsapp.svg') no-repeat center / contain;
+}
+.icon.icon-mail {
+  mask: url('/icons/mail.svg') no-repeat center / contain;
+}
+.icon.icon-map {
+  mask: url('/icons/map.svg') no-repeat center / contain;
+}
+.icon.icon-web-app {
+  mask: url('/icons/web-app.svg') no-repeat center / contain;
+}
+.icon.icon-cloud {
+  mask: url('/icons/cloud.svg') no-repeat center / contain;
+}
+.icon.icon-frontend {
+  mask: url('/icons/frontend.svg') no-repeat center / contain;
+}
+.icon.icon-backend {
+  mask: url('/icons/backend.svg') no-repeat center / contain;
+}
+.icon.icon-seo {
+  mask: url('/icons/seo.svg') no-repeat center / contain;
+}
+.icon.icon-cms {
+  mask: url('/icons/cms.svg') no-repeat center / contain;
+}
