@@ -45,3 +45,6 @@ i.icon {
 .icon.icon-cms {
   mask: url('/icons/cms.svg') no-repeat center / contain;
 }
+.icon.icon-search {
+  mask: url('/icons/search.svg') no-repeat center / contain;
+}

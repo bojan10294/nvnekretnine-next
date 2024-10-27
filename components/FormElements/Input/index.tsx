@@ -27,11 +27,11 @@ const Input = forwardRef<HTMLInputElement, Props>(
     }, [inputRef.current?.value]);
 
     return (
-      <div className="mb-5">
+      <div>
         <div className="relative">
           <Text
             className={`absolute -translate-y-1/2 left-4 pointer-events-none transition-[0.3s] ${
-              focused ? 'text-primary' : 'text-gray-500'
+              focused ? 'text-black' : 'text-gray-500'
             } ${smallLabel ? 'top-3 left-[15px]' : 'top-1/2'}`}
             styling={smallLabel ? 'xs' : 'sm'}
             tag="span"

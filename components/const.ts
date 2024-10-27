@@ -1,17 +1,17 @@
 import { IconType } from 'components/Icon';
 
 export const buttonClasses =
-  'inline-block py-3 text-white uppercase rounded-4xl px-7 lg:px-9 lg:py-4 lg:text-lg bg-primary hover:bg-primary-dark duration-200';
+  'inline-block py-3 text-black uppercase rounded-4xl px-7 lg:px-9 lg:py-4 lg:text-lg bg-primary hover:bg-primary-dark duration-200';
 
 export const navLinks = [
   {
     link: '/gradjevinsko-preduzece',
     title: 'Građevinsko preduzeće'
   },
-  {
-    link: '/gradjevinsko-preduzece#reference',
-    title: 'Reference'
-  },
+  // {
+  //   link: '/gradjevinsko-preduzece#reference',
+  //   title: 'Reference'
+  // },
   {
     link: '/prodaja-stanova',
     title: 'Prodaja stanova'
@@ -23,7 +23,7 @@ export const navLinks = [
 ];
 
 export const inputClasses =
-  'w-full px-4 pt-4 pb-2 border-b-2 outline-transparent focus:border-b-primary';
+  'w-full px-4 pt-4 pb-2 border-b-2 outline-transparent focus:border-b-primary text-black';
 
 interface Service {
   title: string;

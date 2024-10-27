@@ -88,9 +88,9 @@ module.exports = {
           light: '#f1f1f1'
         },
         primary: {
-          DEFAULT: '#FE5000',
-          dark: '#b13800',
-          light: '#fe844c'
+          DEFAULT: '#fefae4',
+          dark: '#deab53',
+          light: '#f6ebcd'
         },
         secondary: {
           DEFAULT: '#0c7b79',

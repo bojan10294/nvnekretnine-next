@@ -61,7 +61,7 @@ const Text: FC<Props> = ({
     )}
     {separator && (
       <div
-        className={`h-[3px] bg-primary rounded-[2px] ${
+        className={`h-[3px] bg-primary-dark rounded-[2px] ${
           separator === 'wide' ? 'w-24 my-6' : 'w-12 my-3'
         }`}
       />

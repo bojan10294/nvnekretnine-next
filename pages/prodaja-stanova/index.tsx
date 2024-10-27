@@ -11,7 +11,7 @@ import { getCities, getLocations } from 'lib/fetchService';
 export default function Home() {
   return (
     <>
-      <HtmlHead title="Sedmi kontinent | Prodaja stanova" />
+      <HtmlHead title="NV Nekretnine | Prodaja stanova" />
 
       <Navigation />
       <MiniHero

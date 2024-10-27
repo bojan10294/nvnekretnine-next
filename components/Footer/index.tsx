@@ -1,5 +1,4 @@
 import Link from 'components/Link';
-import Image from 'next/image';
 import Text from 'components/Text';
 // import Icon, { IconType } from 'components/Icon';
 
@@ -34,17 +33,18 @@ const Footer = () => {
     <footer className="py-4 mt-auto text-white bg-gray-dark">
       <div className="container">
         <div className="flex items-center justify-center md:justify-between">
-          <Link className="hidden md:inline-flex" href="/">
-            <Image
+          <Link className="hidden text-3xl text-white md:inline-flex" href="/">
+            {/* <Image
               alt="Logo"
               className="w-28 md:w-72"
               height={90}
               src="/img/Logo-Orange-White.svg"
               width={545}
-            />
+            /> */}
+            NVNEKRETNINE
           </Link>
           <Text className="!text-xs md:!text-sm" tag="span">
-            &#169; Sedmi kontinent {date.getFullYear()} All rights reserved.
+            &#169; NVNEKRETNINE {date.getFullYear()} All rights reserved.
           </Text>
         </div>
       </div>

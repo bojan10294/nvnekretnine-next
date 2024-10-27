@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 import Link from 'components/Link';
 import HamburgerIcon from 'components/Navigation/Hamburger';
 import { navLinks } from 'components/const';
@@ -27,15 +26,16 @@ const Navigation = () => {
         }`}
       >
         <div className="container items-center justify-between w-full py-3 mx-auto lg:grid lg:grid-flow-col">
-          <div className="flex items-center justify-between w-full">
+          <div className="flex items-center justify-between w-full text-3xl text-white">
             <Link className="flex" href="/">
-              <Image
+              {/* <Image
                 alt="Logo"
                 className="w-48 md:w-72"
                 height={90}
                 src="/img/Logo-White.svg"
                 width={545}
-              />
+              /> */}
+              NVNEKRETNINE
             </Link>
             <HamburgerIcon isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>

@@ -43,7 +43,7 @@ body > div > div {
 }
 
 section {
-  @apply py-12 lg:py-16;
+  @apply py-12 lg:py-20;
 }
 
 .container {
@@ -69,4 +69,10 @@ section {
 }
 .swiper-pagination-bullet-active {
   @apply !bg-primary;
+}
+
+.active-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0.5rem);
 }

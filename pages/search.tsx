@@ -1,10 +1,10 @@
-import ContactForm from 'modules/contact';
 import HtmlHead from 'components/HtmlHead';
 import Navigation from 'components/Navigation';
 import Footer from 'components/Footer';
 import MiniHero from 'components/MiniHero';
+import Listing from 'modules/search/Listing';
 
-const Contact = () => (
+const Search = () => (
   <>
     <HtmlHead title="NV Nekretnine | Kontakt" />
 
@@ -12,11 +12,11 @@ const Contact = () => (
     <MiniHero
       alt="Građevinsko preduzeće"
       bgImageSrc="/img/sales.jpg"
-      title="Kontaktirajte nas"
+      title="Apartmani u ponudi"
     />
-    <ContactForm />
+    <Listing />
     <Footer />
   </>
 );
 
-export default Contact;
+export default Search;

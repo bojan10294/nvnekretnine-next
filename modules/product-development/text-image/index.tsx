@@ -17,13 +17,16 @@ const TextImage: FC<Props> = ({ listItems }) => (
     <div className="container">
       <div className="grid gap-16 md:gap-24">
         {listItems.map((item, index) => (
-          <div key={index} className="grid items-center gap-6 md:grid-cols-2 md:gap-14">
+          <div
+            key={index}
+            className="grid items-center gap-6 md:grid-cols-2 md:gap-14"
+          >
             <div className={index % 2 !== 0 ? 'md:order-2' : ''}>
               <Text separator="wide" tag="h2">
                 {item.title}
               </Text>
               <Text
-                className="mb-6"
+                className="mb-6 !text-lg"
                 dangerouslySetInnerHTML={{ __html: item.description }}
               />
             </div>
