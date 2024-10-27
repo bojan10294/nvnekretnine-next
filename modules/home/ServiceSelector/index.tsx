@@ -12,8 +12,8 @@ interface Service {
 const services: Service[] = [
   {
     img: '/img/construction-1.jpg',
-    name: 'Građevinsko preduzeće',
-    url: '/gradjevinsko-preduzece'
+    name: 'O nama',
+    url: '/o-nama'
   },
   {
     img: '/img/sales.jpg',

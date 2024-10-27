@@ -5,8 +5,8 @@ export const buttonClasses =
 
 export const navLinks = [
   {
-    link: '/gradjevinsko-preduzece',
-    title: 'Građevinsko preduzeće'
+    link: '/o-nama',
+    title: 'O nama'
   },
   // {
   //   link: '/gradjevinsko-preduzece#reference',
