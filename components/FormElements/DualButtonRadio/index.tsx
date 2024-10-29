@@ -47,8 +47,8 @@ const DualButtonRadio: React.FC<DualButtonRadioProps> = ({
             flex-1 px-4 flex items-center justify-center py-2 text-center cursor-pointer transition-colors duration-200
             ${
               currentSelected === option.value
-                ? 'bg-primary text-black'
-                : 'bg-white text-gray-700 hover:bg-gray-100'
+                ? 'bg-primary text-black hover:bg-secondary-blue hover:text-white'
+                : 'bg-white text-gray-700 hover:bg-secondary-blue hover:text-white'
             }
             border border-gray-300 rounded-md focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-opacity-50
           `}

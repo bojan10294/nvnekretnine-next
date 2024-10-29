@@ -3,7 +3,7 @@ import React from 'react';
 
 const Cta = () => (
   <section>
-    <div className="container">
+    <div className="">
       <div className="flex flex-col items-center justify-between p-10 lg:py-14 lg:px-20 rounded-2xl gap-x-8 bg-gradient-to-r from-primary-dark to-primary lg:flex-row">
         <div className="block mb-5 text-center lg:text-left lg:mb-0">
           <Text className="mb-5 text-black lg:mb-2" tag="h2">

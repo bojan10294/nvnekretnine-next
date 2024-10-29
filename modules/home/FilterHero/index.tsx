@@ -128,7 +128,7 @@ const FilterHero: FC<Props> = ({ variant }) => {
   if (variant === 'small') {
     return (
       <div className="relative z-10">
-        <div className="grid grid-cols-2 gap-6 bg-white rounded-3xl">
+        <div className="grid gap-6 bg-white md:grid-cols-2 rounded-3xl">
           <DualButtonRadio
             onChange={(option) => handleChange('namena')(option.value)}
             options={[
@@ -173,10 +173,10 @@ const FilterHero: FC<Props> = ({ variant }) => {
       <div className="container relative text-white">
         <div className="pt-52">
           <h1 className="mb-20 text-5xl font-bold text-center">
-            Pronadjite apartman ili kucu po zelji
+            Novi dom je na klik od Vas. Istražite ponudu.
           </h1>
-          <div className="relative z-10 flex gap-6 p-10 -mb-24 bg-white rounded-[4rem] shadow-md">
-            <div className="grid flex-1 grid-cols-4 gap-6">
+          <div className="relative z-10 flex flex-col lg:flex-row gap-6 p-10 -mb-24 bg-white rounded-[2.5rem] lg:rounded-[4rem] shadow-md">
+            <div className="grid flex-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
               <DualButtonRadio
                 defaultSelected={formState.namena}
                 onChange={handleChange('namena')}
@@ -203,10 +203,10 @@ const FilterHero: FC<Props> = ({ variant }) => {
               />
             </div>
             <Button
-              className="!p-3 rounded-full flex justify-center items-center"
+              className="!p-3 rounded-full flex justify-center items-center bg-secondary-blue"
               onClick={() => handleSearch(formState)}
             >
-              <i className="w-6 h-6 bg-black icon icon-search" />
+              <i className="w-6 h-6 bg-white icon icon-search" />
             </Button>
           </div>
         </div>

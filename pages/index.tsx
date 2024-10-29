@@ -27,8 +27,8 @@ export default function Home() {
       <Popular />
       <div className="container">
         <TextImage listItems={listItems} />
+        <Cta />
       </div>
-      <Cta />
       <Footer />
     </>
   );

@@ -4,6 +4,7 @@ import { FC } from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import Map, { Marker } from 'react-map-gl';
 import Text from 'components/Text';
+import Cta from 'modules/home/Cta';
 
 interface Props {
   apartmentData: any;
@@ -16,7 +17,7 @@ const SingleApartment: FC<Props> = ({ apartmentData }) => {
   return (
     <section>
       <div className="container">
-        <div className="grid gap-4 mb-20 md:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2">
           <div className="relative">
             {apartmentData.attributes.Prodato && (
               <span className="text-xs absolute top-6 right-4 capitalize font-medium mr-2 px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-800">
@@ -68,6 +69,7 @@ const SingleApartment: FC<Props> = ({ apartmentData }) => {
             )}
           </div>
         </div>
+        <Cta />
         <Map
           initialViewState={{
             latitude: lat,

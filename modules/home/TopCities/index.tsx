@@ -12,13 +12,13 @@ const CardImage = () => {
     <section className="pt-48 bg-primary">
       <div className="container">
         <Text className="mb-10 text-center" styling="h1" tag="h2">
-          Najpopularniji gradovi
+          Koji grad za život je vaš izbor? Pretraži sada.
         </Text>
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid gap-6 md:grid-cols-3">
           {topCities?.data?.map((city: any) => (
             <Link
               key={city.id}
-              className="relative px-8 pt-40 pb-12 overflow-hidden text-white bg-black rounded-2xl"
+              className="relative px-8 pt-40 pb-12 overflow-hidden text-white bg-black shadow-md rounded-2xl"
               href={`/search?grad=${encodeURIComponent(city.naziv)}`}
             >
               <BackgroundImage

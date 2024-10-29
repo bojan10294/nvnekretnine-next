@@ -8,12 +8,12 @@ export const navLinks = [
     link: '/o-nama',
     title: 'O nama'
   },
-  // {
-  //   link: '/gradjevinsko-preduzece#reference',
-  //   title: 'Reference'
-  // },
   {
-    link: '/prodaja-stanova',
+    link: '/search?namena=Izdavanje',
+    title: 'Izdavanje stanova'
+  },
+  {
+    link: '/search?namena=Prodaja',
     title: 'Prodaja stanova'
   },
   {

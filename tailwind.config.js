@@ -88,13 +88,13 @@ module.exports = {
           light: '#f1f1f1'
         },
         primary: {
-          DEFAULT: '#fefae4',
+          DEFAULT: '#f6ebcd',
           dark: '#deab53',
-          light: '#f6ebcd'
+          light: '#fefae4'
         },
         secondary: {
           DEFAULT: '#0c7b79',
-          blue: '#0090A1',
+          blue: '#061137',
           brown: '#C8A84E',
           gold: '#F6EDD9',
           purple: {

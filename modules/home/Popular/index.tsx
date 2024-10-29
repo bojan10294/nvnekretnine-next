@@ -12,12 +12,12 @@ const Popular = () => {
   );
 
   return (
-    <section>
+    <section className="bg-secondary-blue">
       <div className="container">
-        <Text className="mb-10 text-center" styling="h1" tag="h2">
+        <Text className="mb-10 text-center text-white" styling="h1" tag="h2">
           Istaknuti oglasi
         </Text>
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid gap-6 md:grid-cols-3">
           {highlighted?.data?.map((apartment: any) => (
             <Link
               key={apartment.id}
@@ -31,10 +31,10 @@ const Popular = () => {
                   src={apartment?.image?.url || '/img/placeholder.jpg'}
                   width={720}
                 />
-                <h3 className="text-xs font-medium tracking-widest uppercase text-primary title-font">
+                <h3 className="text-xs font-medium tracking-widest uppercase text-secondary-blue title-font">
                   {apartment.city}
                 </h3>
-                <h2 className="mb-4 text-lg font-medium text-gray-900 title-font">
+                <h2 className="mb-4 text-2xl font-semibold text-gray-900 title-font">
                   {apartment.title}
                 </h2>
                 <div className="flex justify-between">
