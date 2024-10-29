@@ -11,8 +11,8 @@ interface Props {
 }
 
 const SingleApartment: FC<Props> = ({ apartmentData }) => {
-  const lng = apartmentData.attributes.Lokacija.data.attributes.Longitude;
-  const lat = apartmentData.attributes.Lokacija.data.attributes.Latitude;
+  const lng = apartmentData.attributes.Longitude;
+  const lat = apartmentData.attributes.Latitude;
 
   return (
     <section>
@@ -43,9 +43,9 @@ const SingleApartment: FC<Props> = ({ apartmentData }) => {
                 {apartmentData.attributes.Detalji.VrstaNekretnine}
               </Text>
             )}
-            <Text styling="h5">
+            {/* <Text styling="h5">
               Adresa: {apartmentData.attributes.Lokacija.data.attributes.Adresa}
-            </Text>
+            </Text> */}
             {apartmentData.attributes.Detalji.PovrsinaKvM && (
               <Text styling="h5">
                 Površina: {apartmentData.attributes.Detalji.PovrsinaKvM} m
