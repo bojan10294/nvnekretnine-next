@@ -15,7 +15,7 @@ export const listItems: ListItem[] = [
   },
   {
     description:
-      'Pretražite - Unesite željene kriterijume u formu za pretragu i pronađite nekretnine koje vam odgovaraju.<br>Kontaktirajte nas - Direktno stupite u kontakt sa našim agentom koji će Vam dodatno pružiti podršku u izboru Vašeg doma.<br>Oglasite svoju nekretninu - Ako imate nekretninu za izdavanje ili prodaju, lako je možete oglasiti na NV Nekretnine.',
+      'Pretražite - Unesite željene kriterijume u formu za pretragu i pronađite nekretnine koje vam odgovaraju.<br>Kontaktirajte nas - Direktno stupite u kontakt sa našim agentom koji će Vam dodatno pružiti podršku u izboru Vašeg doma.',
     img: '/img/stan-2.jpg',
     title: 'Kako funkcioniše?'
   }
