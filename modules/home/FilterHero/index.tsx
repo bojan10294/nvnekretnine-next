@@ -173,7 +173,7 @@ const FilterHero: FC<Props> = ({ variant }) => {
         alt="hero background"
         className="object-bottom"
         opacity="40"
-        src="/img/pocetna slika.jpg"
+        src="/img/pocetna-slika.jpg"
       />
       <div className="container relative text-white">
         <div className="pt-52">

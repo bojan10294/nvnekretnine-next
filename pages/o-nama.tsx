@@ -27,7 +27,7 @@ export default function Home() {
       <HtmlHead title="Sedmi kontinent | Građevinsko preduzeće" />
 
       <Navigation />
-      <MiniHero alt="O nama" bgImageSrc="/img/o nama.jpg" title="O nama" />
+      <MiniHero alt="O nama" bgImageSrc="/img/o-nama.jpg" title="O nama" />
       <div className="container py-10">
         <div className="max-w-5xl">
           <Text className="mb-8" tag="h2">
