@@ -21,7 +21,11 @@ const GridWithLines = ({ gridItems }: Props) => (
         </Text>
         <Text dangerouslySetInnerHTML={{ __html: description }} />
         {linkText && (
-          <Link className="mt-4" href={linkUrl} variant="arrow">
+          <Link
+            className="mt-4 text-primary-dark"
+            href={linkUrl}
+            variant="arrow"
+          >
             {linkText}
           </Link>
         )}
