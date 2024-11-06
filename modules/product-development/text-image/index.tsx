@@ -32,7 +32,7 @@ const TextImage: FC<Props> = ({ listItems }) => (
             </div>
             <Image
               alt="Company success"
-              className="object-cover w-full rounded-lg h-60 shadow-02 lg:h-96"
+              className="object-cover w-full rounded-lg h-60 shadow-02 lg:h-[28rem]"
               height={500}
               src={item.img}
               width={900}

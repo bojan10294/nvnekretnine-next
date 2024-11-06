@@ -11,7 +11,7 @@ const listItems: ListItem[] = [
   {
     description:
       '- Sigurno vođenje kroz postupak kupoprodaje<br>- Postprodajna podrška: katastar nepokretnosti, Poreska uprava, Lokalna poreska administracija<br>- Sačinjavanje ugovora<br>- Podrška u bankama ( kreditni kupci )',
-    img: '/img/team-image.jpeg',
+    img: '/img/saradnja.jpg',
     title: 'Sta dobijate saradnjom sa NV nekretnine?'
   }
 ];

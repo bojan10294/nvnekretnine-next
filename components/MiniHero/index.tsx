@@ -22,10 +22,10 @@ const MiniHero: FC<Props> = ({ title, alt, bgImageSrc, location }) => {
   const locationData = data?.data[0];
 
   return (
-    <section className="relative items-center pt-20 pb-10 overflow-hidden md:pt-36 bg-gray-dark">
+    <section className="relative items-center pt-20 pb-10 overflow-hidden md:pt-72 bg-gray-dark">
       <BackgroundImage
         alt={alt}
-        className="grayscale"
+        className="object-bottom"
         opacity="50"
         src={bgImageSrc}
       />

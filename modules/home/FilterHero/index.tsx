@@ -169,13 +169,18 @@ const FilterHero: FC<Props> = ({ variant }) => {
 
   return (
     <div className="relative bg-black">
-      <BackgroundImage alt="hero background" opacity="40" src="/img/rent.jpg" />
+      <BackgroundImage
+        alt="hero background"
+        className="object-bottom"
+        opacity="40"
+        src="/img/pocetna slika.jpg"
+      />
       <div className="container relative text-white">
         <div className="pt-52">
           <h1 className="mb-20 text-5xl font-bold text-center">
             Novi dom je na klik od Vas. Istražite ponudu.
           </h1>
-          <div className="relative z-10 flex flex-col lg:flex-row gap-6 p-10 -mb-24 bg-white rounded-[2.5rem] lg:rounded-[4rem] shadow-md">
+          <div className="relative z-10 flex flex-col lg:flex-row gap-6 p-10 -mb-24 bg-white rounded-xl shadow-md border-b-[5px] border-secondary-blue">
             <div className="grid flex-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
               <DualButtonRadio
                 defaultSelected={formState.namena}
