@@ -29,11 +29,11 @@ const SingleApartment: FC<Props> = ({ apartmentData }) => {
       <div className="container">
         <div className="grid gap-4 md:grid-cols-2">
           <div className="relative">
-            {apartmentData.attributes.Prodato && (
-              <span className="text-xs absolute top-6 right-4 capitalize font-medium mr-2 px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-800">
-                Prodato
+            <div className="absolute right-0 px-5 py-3 text-white shadow rounded-l-4xl bg-secondary-blue top-4">
+              <span className="text-lg font-medium uppercase">
+                {apartmentData.attributes.Detalji.Namena}
               </span>
-            )}
+            </div>
             <Image
               alt="content"
               className="object-cover object-center w-full rounded h-52 md:h-96"
@@ -238,6 +238,9 @@ const SingleApartment: FC<Props> = ({ apartmentData }) => {
               )}
             </div>
             <div className="mt-6">
+              <Text className="mb-3" separator="wide" tag="h4">
+                Cena: {apartmentData.attributes.Cena} €
+              </Text>
               <Text className="mb-3" tag="h4">
                 Detaljan opis nekretnine:
               </Text>
@@ -247,13 +250,17 @@ const SingleApartment: FC<Props> = ({ apartmentData }) => {
         </div>
         <Cta />
         <Map
+          boxZoom={false} // Disables box zoom
+          doubleClickZoom={false} // Disables double click zoom
           initialViewState={{
             latitude: lat,
             longitude: lng,
-            zoom: 13
+            zoom: 12
           }}
+          keyboard={false}
           mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
           mapStyle="mapbox://styles/mapbox/streets-v9"
+          scrollZoom={false} // Disables scroll wheel zoom
           style={{ height: 400, width: '100%' }}
         >
           <Marker latitude={lat} longitude={lng}>

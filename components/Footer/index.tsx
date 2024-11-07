@@ -1,5 +1,6 @@
 import Link from 'components/Link';
 import Text from 'components/Text';
+import Image from 'next/image';
 // import Icon, { IconType } from 'components/Icon';
 
 // interface ContactLinks {
@@ -34,14 +35,13 @@ const Footer = () => {
       <div className="container">
         <div className="flex items-center justify-center md:justify-between">
           <Link className="hidden text-3xl text-white md:inline-flex" href="/">
-            {/* <Image
+            <Image
               alt="Logo"
               className="w-28 md:w-72"
               height={90}
-              src="/img/Logo-Orange-White.svg"
+              src="/img/logo-horizontal.svg"
               width={545}
-            /> */}
-            NVNEKRETNINE
+            />
           </Link>
           <Text className="!text-xs md:!text-sm" tag="span">
             &#169; NVNEKRETNINE {date.getFullYear()} All rights reserved.
