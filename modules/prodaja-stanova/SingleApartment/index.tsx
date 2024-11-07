@@ -46,7 +46,7 @@ const SingleApartment: FC<Props> = ({ apartmentData }) => {
               width={720}
             />
           </div>
-          <div className="px-5">
+          <div className="md:px-5">
             <div className="grid gap-2 lg:grid-cols-2">
               {apartmentData.attributes.Tip && (
                 <Text className="flex items-center" styling="h5">
@@ -250,17 +250,14 @@ const SingleApartment: FC<Props> = ({ apartmentData }) => {
         </div>
         <Cta />
         <Map
-          boxZoom={false} // Disables box zoom
-          doubleClickZoom={false} // Disables double click zoom
           initialViewState={{
             latitude: lat,
             longitude: lng,
             zoom: 12
           }}
-          keyboard={false}
           mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
           mapStyle="mapbox://styles/mapbox/streets-v9"
-          scrollZoom={false} // Disables scroll wheel zoom
+          maxZoom={13}
           style={{ height: 400, width: '100%' }}
         >
           <Marker latitude={lat} longitude={lng}>

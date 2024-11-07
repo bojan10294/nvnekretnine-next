@@ -176,7 +176,7 @@ const FilterHero: FC<Props> = ({ variant }) => {
         src="/img/pocetna-slika.jpg"
       />
       <div className="container relative text-white">
-        <div className="pt-52">
+        <div className="pt-20 md:pt-52">
           <h1 className="mb-20 text-5xl font-bold text-center">
             Novi dom je na klik od Vas. Istražite ponudu.
           </h1>
