@@ -20,27 +20,11 @@ const aboutUs: gridItem[] = [
 ];
 
 const Contact = () => (
-  // const lat = 44.81255643371841;
-  // const lng = 21.461273407824144;
   <>
     <section>
       <div className="container">
         <div className="grid gap-10 lg:gap-20 lg:grid-cols-2">
           <ContactForm />
-          {/* <Map
-              initialViewState={{
-                latitude: lat,
-                longitude: lng,
-                zoom: 13
-              }}
-              mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
-              mapStyle="mapbox://styles/mapbox/streets-v9"
-              style={{ borderRadius: '10px', height: 400, width: '100%' }}
-            >
-              <Marker latitude={lat} longitude={lng}>
-                <div className="marker" />
-              </Marker>
-            </Map> */}
           <section>
             <div className="container">
               <div className="mb-6 text-center lg:mb-14">
