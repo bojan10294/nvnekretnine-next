@@ -24,7 +24,7 @@ export default function Home() {
       <Navigation />
       <MiniHero
         alt="Prodaja stanova"
-        bgImageSrc="/img/real-estate-2.jpg"
+        bgImageSrc="/img/pocetna-slika.jpg"
         title={apartment as string}
       />
       <SingleApartment apartmentData={apartmentData} />

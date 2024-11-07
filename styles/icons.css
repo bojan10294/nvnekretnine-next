@@ -48,3 +48,45 @@ i.icon {
 .icon.icon-search {
   mask: url('/icons/search.svg') no-repeat center / contain;
 }
+.icon.icon-building {
+  mask: url('/icons/building.svg') no-repeat center / contain;
+}
+.icon.icon-ruler {
+  mask: url('/icons/ruler.svg') no-repeat center / contain;
+}
+.icon.icon-elevator {
+  mask: url('/icons/elevator.svg') no-repeat center / contain;
+}
+.icon.icon-house-building {
+  mask: url('/icons/house-building.svg') no-repeat center / contain;
+}
+.icon.icon-calendar-check {
+  mask: url('/icons/calendar-check.svg') no-repeat center / contain;
+}
+.icon.icon-bed {
+  mask: url('/icons/bed.svg') no-repeat center / contain;
+}
+.icon.icon-people {
+  mask: url('/icons/people.svg') no-repeat center / contain;
+}
+.icon.icon-book {
+  mask: url('/icons/book.svg') no-repeat center / contain;
+}
+.icon.icon-internet {
+  mask: url('/icons/internet.svg') no-repeat center / contain;
+}
+.icon.icon-car {
+  mask: url('/icons/car.svg') no-repeat center / contain;
+}
+.icon.icon-money {
+  mask: url('/icons/money.svg') no-repeat center / contain;
+}
+.icon.icon-tv {
+  mask: url('/icons/tv.svg') no-repeat center / contain;
+}
+.icon.icon-yard {
+  mask: url('/icons/yard.svg') no-repeat center / contain;
+}
+.icon.icon-dog {
+  mask: url('/icons/dog.svg') no-repeat center / contain;
+}
