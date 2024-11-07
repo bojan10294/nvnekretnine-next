@@ -54,13 +54,51 @@ section {
 }
 
 .marker {
-  background-size: contain;
-  width: 40px;
-  height: 40px;
-  transform: translateY(-20px);
-  background-repeat: no-repeat;
-  display: inline-block;
-  background-image: url('/icons/marker-editor.svg');
+  width: 50px;
+  height: 50px;
+  @apply bg-secondary-blue/70;
+  border-radius: 50%;
+  position: relative;
+  animation: pulse 2s infinite;
+}
+
+.marker::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  @apply bg-secondary-blue/40;
+  border-radius: 50%;
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.95);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
 }
 
 .swiper-button-next,
