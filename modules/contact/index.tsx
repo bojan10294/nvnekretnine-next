@@ -6,15 +6,15 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 const aboutUs: gridItem[] = [
   {
-    description: 'office@nvnekretnine.rs',
+    description: 'nvnekretnine@gmail.com',
     linkText: 'Pošaljite mejl',
-    linkUrl: 'mailto:office@nvnekretnine.rs',
+    linkUrl: 'mailto:nvnekretnine@gmail.com',
     title: 'E-mail'
   },
   {
-    description: '+381 60 5381 714',
+    description: '+381 64 12 19 821',
     linkText: 'Pozovite nas',
-    linkUrl: 'tel:+381605381714',
+    linkUrl: 'tel:+381641219821',
     title: 'Telefon'
   }
 ];
