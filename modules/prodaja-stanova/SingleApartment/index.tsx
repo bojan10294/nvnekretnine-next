@@ -101,6 +101,7 @@ const SingleApartment: FC<Props> = ({ apartmentData }) => {
                   className="object-cover object-center w-full h-full rounded"
                   height={80}
                   src={image.attributes.url}
+                  unoptimized
                   width={120}
                 />
               </div>
