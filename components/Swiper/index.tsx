@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { FC } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, A11y, Thumbs } from 'swiper';
+import { Navigation, Pagination, A11y, Thumbs } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/swiper-bundle.min.css';
