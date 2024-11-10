@@ -26,6 +26,8 @@ export type IconType =
   | 'tv'
   | 'yard'
   | 'dog'
+  | 'radiator'
+  | 'apartment'
   | 'web-app'
   | 'whatsapp';
 

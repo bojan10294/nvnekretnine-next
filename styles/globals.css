@@ -114,3 +114,9 @@ section {
   visibility: visible;
   transform: translateY(0.5rem);
 }
+
+.swiper-slide-thumb-active {
+  outline: 2px solid #061137;
+  outline-offset: -2px;
+  border-radius: 4px;
+}

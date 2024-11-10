@@ -13,7 +13,7 @@ const SingleListing: FC<any> = ({ listing }) => (
           alt="imac image"
           className="object-cover w-full h-56 md:h-44 md:w-60"
           height={400}
-          src={listing.attributes.Slike.data.attributes.url}
+          src={listing.attributes.Slike.data[0].attributes.url}
           width={400}
         />
         <div className="absolute px-3 py-1 text-sm text-white shadow rounded-2xl bg-secondary-blue top-4 left-4">

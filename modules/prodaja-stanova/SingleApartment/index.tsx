@@ -1,12 +1,20 @@
-/* eslint-disable no-console */
 import Image from 'next/image';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import Map, { Marker } from 'react-map-gl';
 import Text from 'components/Text';
 import Cta from 'modules/home/Cta';
 import Icon from 'components/Icon';
 import Markdown from 'markdown-to-jsx';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Zoom, FreeMode, Thumbs } from 'swiper/modules';
+import type { Swiper as SwiperType } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/zoom';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/thumbs';
 
 interface Props {
   apartmentData: any;
@@ -21,33 +29,111 @@ function formatDate(dateString: string) {
 }
 
 const SingleApartment: FC<Props> = ({ apartmentData }) => {
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | undefined>(
+    undefined
+  );
   const lng = apartmentData.attributes.Longitude;
   const lat = apartmentData.attributes.Latitude;
+  const hasMultipleImages = apartmentData.attributes.Slike.data.length > 1;
+
+  const renderSingleImage = () => (
+    <Image
+      alt="content"
+      className="object-cover object-center w-full rounded h-52 md:h-96"
+      height={400}
+      src={
+        apartmentData.attributes.Slike.data[0]
+          ? apartmentData.attributes.Slike.data[0].attributes.url
+          : '/img/construction-1.jpg'
+      }
+      width={720}
+    />
+  );
+
+  const renderImageGallery = () => (
+    <div className="space-y-2">
+      <Swiper
+        className="w-full rounded h-52 md:h-96"
+        loop
+        modules={[Navigation, Pagination, Zoom, FreeMode, Thumbs]}
+        navigation
+        pagination={{ clickable: true }}
+        thumbs={thumbsSwiper ? { swiper: thumbsSwiper } : undefined}
+        zoom={{
+          maxRatio: 3,
+          minRatio: 1
+        }}
+      >
+        {apartmentData.attributes.Slike.data.map(
+          (image: any, index: number) => (
+            <SwiperSlide key={index}>
+              <div className="swiper-zoom-container cursor-zoom-in">
+                <Image
+                  alt={`content-${index + 1}`}
+                  className="object-cover object-center w-full h-full"
+                  height={400}
+                  src={image.attributes.url}
+                  unoptimized
+                  width={720}
+                />
+              </div>
+            </SwiperSlide>
+          )
+        )}
+      </Swiper>
+
+      <Swiper
+        className="h-20"
+        freeMode
+        loop
+        modules={[FreeMode, Navigation, Thumbs]}
+        onSwiper={setThumbsSwiper}
+        slidesPerView={4}
+        spaceBetween={10}
+        watchSlidesProgress
+      >
+        {apartmentData.attributes.Slike.data.map(
+          (image: any, index: number) => (
+            <SwiperSlide key={index}>
+              <div className="h-full cursor-pointer">
+                <Image
+                  alt={`thumb-${index + 1}`}
+                  className="object-cover object-center w-full h-full rounded"
+                  height={80}
+                  src={image.attributes.url}
+                  width={120}
+                />
+              </div>
+            </SwiperSlide>
+          )
+        )}
+      </Swiper>
+    </div>
+  );
 
   return (
     <section>
       <div className="container">
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="gap-4 md:grid md:grid-cols-2">
           <div className="relative">
-            <div className="absolute right-0 px-5 py-3 text-white shadow rounded-l-4xl bg-secondary-blue top-4">
-              <span className="text-lg font-medium uppercase">
-                {apartmentData.attributes.Detalji.Namena}
-              </span>
-            </div>
-            <Image
-              alt="content"
-              className="object-cover object-center w-full rounded h-52 md:h-96"
-              height={400}
-              src={
-                apartmentData.attributes.Slike.data
-                  ? apartmentData.attributes.Slike.data.attributes.url
-                  : '/img/construction-1.jpg'
-              }
-              width={720}
-            />
+            {hasMultipleImages ? renderImageGallery() : renderSingleImage()}
           </div>
-          <div className="md:px-5">
+          <div className="mt-4 md: mt-0md:px-5">
             <div className="grid gap-2 lg:grid-cols-2">
+              {apartmentData.attributes.Detalji.Namena && (
+                <Text className="flex items-center" styling="h5">
+                  <Icon
+                    className="mr-2 shrink-0"
+                    color="primary-dark"
+                    size={7}
+                    type="house-building"
+                  />
+                  Namena:
+                  <strong className="ml-1">
+                    {apartmentData.attributes.Detalji.Namena}
+                  </strong>
+                </Text>
+              )}
               {apartmentData.attributes.Tip && (
                 <Text className="flex items-center" styling="h5">
                   <Icon
@@ -73,6 +159,20 @@ const SingleApartment: FC<Props> = ({ apartmentData }) => {
                   Površina:
                   <strong className="ml-1">
                     {apartmentData.attributes.Detalji.PovrsinaKvM} m<sup>2</sup>
+                  </strong>
+                </Text>
+              )}
+              {apartmentData.attributes.Detalji.Struktura && (
+                <Text className="flex items-center ml-0.5" styling="h5">
+                  <Icon
+                    className="mr-2.5 shrink-0"
+                    color="primary-dark"
+                    size={6}
+                    type="apartment"
+                  />
+                  Sobe:
+                  <strong className="ml-1">
+                    {apartmentData.attributes.Detalji.Struktura}
                   </strong>
                 </Text>
               )}
@@ -158,6 +258,20 @@ const SingleApartment: FC<Props> = ({ apartmentData }) => {
                   {apartmentData.attributes.Detalji.Lift ? 'Da' : 'Ne'}
                 </strong>
               </Text>
+              {apartmentData.attributes.Detalji.Grejanje && (
+                <Text className="flex items-center ml-0.5" styling="h5">
+                  <Icon
+                    className="mr-2.5 shrink-0"
+                    color="primary-dark"
+                    size={6}
+                    type="radiator"
+                  />
+                  Grejanje:
+                  <strong className="ml-1">
+                    {apartmentData.attributes.Detalji.Grejanje}
+                  </strong>
+                </Text>
+              )}
               <Text className="flex items-center ml-0.5" styling="h5">
                 <Icon
                   className="mr-2.5 shrink-0"
@@ -168,18 +282,6 @@ const SingleApartment: FC<Props> = ({ apartmentData }) => {
                 Uknjižen:
                 <strong className="ml-1">
                   {apartmentData.attributes.Detalji.Uknjizen ? 'Da' : 'Ne'}
-                </strong>
-              </Text>
-              <Text className="flex items-center ml-0.5" styling="h5">
-                <Icon
-                  className="mr-2.5 shrink-0"
-                  color="primary-dark"
-                  size={6}
-                  type="yard"
-                />
-                Dvorište:
-                <strong className="ml-1">
-                  {apartmentData.attributes.Detalji.Dvoriste ? 'Da' : 'Ne'}
                 </strong>
               </Text>
               <Text className="flex items-center ml-0.5" styling="h5">
@@ -220,6 +322,18 @@ const SingleApartment: FC<Props> = ({ apartmentData }) => {
                   </strong>
                 </Text>
               )}
+              <Text className="flex items-center ml-0.5" styling="h5">
+                <Icon
+                  className="mr-2.5 shrink-0"
+                  color="primary-dark"
+                  size={6}
+                  type="yard"
+                />
+                Dvorište:
+                <strong className="ml-1">
+                  {apartmentData.attributes.Detalji.Dvoriste ? 'Da' : 'Ne'}
+                </strong>
+              </Text>
               {apartmentData.attributes.Detalji.KucniLjubimci && (
                 <Text className="flex items-center ml-0.5" styling="h5">
                   <Icon
@@ -239,7 +353,10 @@ const SingleApartment: FC<Props> = ({ apartmentData }) => {
             </div>
             <div className="mt-6">
               <Text className="mb-3" separator="wide" tag="h4">
-                Cena: {apartmentData.attributes.Cena} €
+                Cena:{' '}
+                {apartmentData.attributes.Cena
+                  ? `${apartmentData.attributes.Cena} €`
+                  : 'Na upit'}
               </Text>
               <Text className="mb-3" tag="h4">
                 Detaljan opis nekretnine:

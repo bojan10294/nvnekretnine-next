@@ -10,13 +10,13 @@ export const listItems: ListItem[] = [
   {
     description:
       'Stanovi i kuće za izdavanje i prodaju - Pregledajte najnovije oglase i pronađite savršen dom ili investiciju.<br>Poslovni prostori - Idealni prostori za vašu firmu ili radno mesto.<br>Jednostavna pretraga - Naš pretraživač omogućava vam da pronađete nekretnine po željenoj lokaciji, broju soba, kvadraturi i ceni.<br>Proveren kvalitet - Svaka nekretnina u našoj ponudi je proverena i detaljno opisana, kako biste dobili sve informacije koje su vam potrebne za donošenje odluke.',
-    img: '/img/stan-1.jpeg',
+    img: '/img/buildings.png',
     title: 'Šta nudimo?'
   },
   {
     description:
       'Pretražite - Unesite željene kriterijume u formu za pretragu i pronađite nekretnine koje vam odgovaraju.<br>Kontaktirajte nas - Direktno stupite u kontakt sa našim agentom koji će Vam dodatno pružiti podršku u izboru Vašeg doma.',
-    img: '/img/stan-2.jpg',
+    img: '/img/keys.png',
     title: 'Kako funkcioniše?'
   }
 ];

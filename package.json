@@ -27,13 +27,14 @@
     "react-hook-form": "^7.42.1",
     "react-map-gl": "^7.0.23",
     "sharp": "^0.31.3",
-    "swiper": "^9.3.2",
+    "swiper": "^11.1.14",
     "tailwindcss": "^3.2.4",
     "typescript": "4.9.4"
   },
   "devDependencies": {
     "@types/mapbox-gl": "^2.7.10",
     "@types/nodemailer": "^6.4.7",
+    "@types/swiper": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^5.47.1",
     "@typescript-eslint/parser": "^5.47.1",
     "eslint": "^8.30.0",

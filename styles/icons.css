@@ -90,3 +90,9 @@ i.icon {
 .icon.icon-dog {
   mask: url('/icons/dog.svg') no-repeat center / contain;
 }
+.icon.icon-radiator {
+  mask: url('/icons/radiator.svg') no-repeat center / contain;
+}
+.icon.icon-apartment {
+  mask: url('/icons/apartment.svg') no-repeat center / contain;
+}
