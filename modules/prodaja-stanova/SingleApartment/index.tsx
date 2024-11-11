@@ -52,7 +52,7 @@ const SingleApartment: FC<Props> = ({ apartmentData }) => {
     <div className="space-y-2">
       <Swiper
         className="w-full rounded h-52 md:h-96"
-        loop={false} // Changed to false to prevent thumb sync issues
+        loop
         modules={[Navigation, Pagination, Zoom, FreeMode, Thumbs]}
         navigation
         pagination={{ clickable: true }}
@@ -86,7 +86,7 @@ const SingleApartment: FC<Props> = ({ apartmentData }) => {
       <Swiper
         className="h-20"
         freeMode
-        loop={false} // Changed to false to prevent thumb sync issues
+        loop
         modules={[FreeMode, Navigation, Thumbs]}
         onSwiper={setThumbsSwiper}
         slidesPerView={4}
