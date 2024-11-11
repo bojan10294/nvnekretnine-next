@@ -120,3 +120,8 @@ section {
   outline-offset: -2px;
   border-radius: 4px;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #deab53 !important;
+}

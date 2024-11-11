@@ -29,9 +29,7 @@ function formatDate(dateString: string) {
 }
 
 const SingleApartment: FC<Props> = ({ apartmentData }) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | undefined>(
-    undefined
-  );
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
   const lng = apartmentData.attributes.Longitude;
   const lat = apartmentData.attributes.Latitude;
   const hasMultipleImages = apartmentData.attributes.Slike.data.length > 1;
@@ -54,11 +52,13 @@ const SingleApartment: FC<Props> = ({ apartmentData }) => {
     <div className="space-y-2">
       <Swiper
         className="w-full rounded h-52 md:h-96"
-        loop
+        loop={false} // Changed to false to prevent thumb sync issues
         modules={[Navigation, Pagination, Zoom, FreeMode, Thumbs]}
         navigation
         pagination={{ clickable: true }}
-        thumbs={thumbsSwiper ? { swiper: thumbsSwiper } : undefined}
+        thumbs={{
+          swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null
+        }}
         zoom={{
           maxRatio: 3,
           minRatio: 1
@@ -66,12 +66,13 @@ const SingleApartment: FC<Props> = ({ apartmentData }) => {
       >
         {apartmentData.attributes.Slike.data.map(
           (image: any, index: number) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={`main-${image.id || index}`}>
               <div className="swiper-zoom-container cursor-zoom-in">
                 <Image
                   alt={`content-${index + 1}`}
                   className="object-cover object-center w-full h-full"
                   height={400}
+                  priority={index === 0}
                   src={image.attributes.url}
                   unoptimized
                   width={720}
@@ -85,21 +86,23 @@ const SingleApartment: FC<Props> = ({ apartmentData }) => {
       <Swiper
         className="h-20"
         freeMode
-        loop
+        loop={false} // Changed to false to prevent thumb sync issues
         modules={[FreeMode, Navigation, Thumbs]}
         onSwiper={setThumbsSwiper}
         slidesPerView={4}
+        slideToClickedSlide
         spaceBetween={10}
         watchSlidesProgress
       >
         {apartmentData.attributes.Slike.data.map(
           (image: any, index: number) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={`thumb-${image.id || index}`}>
               <div className="h-full cursor-pointer">
                 <Image
                   alt={`thumb-${index + 1}`}
                   className="object-cover object-center w-full h-full rounded"
                   height={80}
+                  priority={index === 0}
                   src={image.attributes.url}
                   unoptimized
                   width={120}
