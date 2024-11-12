@@ -96,3 +96,9 @@ i.icon {
 .icon.icon-apartment {
   mask: url('/icons/apartment.svg') no-repeat center / contain;
 }
+.icon.icon-spinner {
+  mask: url('/icons/spinner.svg') no-repeat center / contain;
+}
+.icon.icon-close {
+  mask: url('/icons/close.svg') no-repeat center / contain;
+}

@@ -2,27 +2,45 @@ import Button from 'components/FormElements/Button';
 import Form from 'components/FormElements/Form';
 import ControlledInput from 'components/FormElements/Input/ControlledInput';
 import ControlledTextArea from 'components/FormElements/TextArea/ControlledTextArea';
+import Snackbar from 'components/Snakbar';
 import { fetchService } from 'lib/fetchService';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 interface FormValues {
   name: string;
   email: string;
-  phone?: number;
+  phone?: string;
   message: string;
   website?: string;
 }
 
-const submit = async (values: FormValues) => {
-  const res = await fetchService('contact', {
-    body: JSON.stringify(values),
-    method: 'POST'
-  });
-  console.log(res.status);
-};
-
 const ContactForm = () => {
-  const { control, handleSubmit } = useForm<FormValues>();
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const {
+    control,
+    handleSubmit,
+    reset,
+    formState: { isSubmitting, isSubmitSuccessful }
+  } = useForm<FormValues>({
+    defaultValues: { email: '', message: '', name: '', phone: '', website: '' }
+  });
+
+  const submit = async (values: FormValues) => {
+    setIsSubmitted(false);
+    const response = await fetchService('api/contact', {
+      body: JSON.stringify(values),
+      method: 'POST'
+    });
+    reset();
+    if (response?.status === 200) {
+      setIsSubmitted(true);
+    } else {
+      setIsSubmitted(true);
+      throw { message: 'error' };
+    }
+  };
 
   return (
     <>
@@ -47,15 +65,17 @@ const ContactForm = () => {
           }}
         />
         <ControlledInput control={control} label="Telefon" name="phone" />
-        <ControlledInput control={control} label="Web sajt" name="website" />
         <ControlledTextArea
           control={control}
           label="Poruka"
           name="message"
           rules={{ required: 'Molimo unesite poruku' }}
         />
-        <Button className="!py-3 !px-16 rounded-md">Pošaljite</Button>
+        <Button className="!py-3 !px-16 rounded-md" isSubmitting={isSubmitting}>
+          Pošaljite
+        </Button>
       </Form>
+      {isSubmitted && <Snackbar isSubmitSuccessful={isSubmitSuccessful} />}
     </>
   );
 };

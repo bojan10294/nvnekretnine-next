@@ -38,7 +38,7 @@ const Link: FC<Props> = ({
           className={`rotate-180 duration-150 ${
             isArrowMoved ? 'translate-x-1.5' : ''
           }`}
-          color="primary-dark"
+          color="secondary-blue"
           size={5}
           type="arrow"
         />

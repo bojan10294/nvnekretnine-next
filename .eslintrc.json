@@ -44,6 +44,7 @@
     "function-paren-newline": "off",
     "max-len": "off",
     "jsx-indent": "off",
-    "react/jsx-indent": "off"
+    "react/jsx-indent": "off",
+    "no-throw-literal": "off"
   }
 }

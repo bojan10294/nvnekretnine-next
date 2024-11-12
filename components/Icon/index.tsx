@@ -29,6 +29,8 @@ export type IconType =
   | 'radiator'
   | 'apartment'
   | 'web-app'
+  | 'spinner'
+  | 'close'
   | 'whatsapp';
 
 interface Props extends HTMLProps<HTMLDivElement> {

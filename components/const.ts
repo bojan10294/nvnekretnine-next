@@ -1,7 +1,7 @@
 import { IconType } from 'components/Icon';
 
 export const buttonClasses =
-  'inline-block py-3 text-black uppercase rounded-4xl px-7 lg:px-9 lg:py-4 lg:text-lg bg-primary hover:bg-primary-dark duration-200';
+  'inline-block py-3 text-black uppercase rounded-4xl px-7 lg:px-9 lg:py-4 lg:text-lg bg-secondary-blue text-white hover:bg-secondary-blue/90 duration-200';
 
 export const navLinks = [
   {
