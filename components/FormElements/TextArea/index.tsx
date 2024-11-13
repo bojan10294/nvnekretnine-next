@@ -35,7 +35,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, Props>(
         <div className="relative">
           <Text
             className={`absolute -translate-y-1/2 left-4 pointer-events-none transition-[0.3s] ${
-              focused ? 'text-primary' : 'text-gray-500'
+              focused ? 'text-secondary-blue' : 'text-gray-500'
             } ${smallLabel ? 'top-3 left-[15px]' : 'top-7'}`}
             styling={smallLabel ? 'xs' : 'sm'}
             tag="span"
