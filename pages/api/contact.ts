@@ -37,13 +37,8 @@ export default async function handler(
     // The body is already parsed by Next.js, no need for JSON.parse
     const { name, email, message, phone, recaptchaToken } = req.body;
 
-    // Log the received data for debugging
-    console.log('Received form data:', { email, message, name, phone });
-    console.log('Received reCAPTCHA token:', recaptchaToken);
-
     // Verify reCAPTCHA
     const recaptchaVerification = await verifyRecaptcha(recaptchaToken);
-    console.log('reCAPTCHA verification result:', recaptchaVerification);
 
     if (!recaptchaVerification.success) {
       return res.status(400).json({
