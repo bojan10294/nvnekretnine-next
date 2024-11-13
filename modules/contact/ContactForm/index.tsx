@@ -7,15 +7,6 @@ import { fetchService } from 'lib/fetchService';
 import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
-interface FormValues {
-  name: string;
-  email: string;
-  phone?: string;
-  message: string;
-  website?: string;
-}
-
-// Add type declaration for grecaptcha
 declare global {
   interface Window {
     grecaptcha: {
@@ -28,44 +19,73 @@ declare global {
   }
 }
 
+interface FormValues {
+  name: string;
+  email: string;
+  phone?: string;
+  message: string;
+  website?: string;
+}
+
 const ContactForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isRecaptchaLoaded, setIsRecaptchaLoaded] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const {
     control,
     handleSubmit,
     reset,
-    formState: { isSubmitting, isSubmitSuccessful }
+    formState: { isSubmitting }
   } = useForm<FormValues>({
     defaultValues: { email: '', message: '', name: '', phone: '', website: '' }
   });
 
-  // Check if reCAPTCHA is loaded
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.grecaptcha) {
-      window.grecaptcha.ready(() => {
-        setIsRecaptchaLoaded(true);
-      });
-    }
+    const loadRecaptcha = () => {
+      if (
+        typeof window !== 'undefined' &&
+        window.grecaptcha &&
+        window.grecaptcha.ready
+      ) {
+        window.grecaptcha.ready(() => {
+          setIsRecaptchaLoaded(true);
+        });
+      } else {
+        setTimeout(loadRecaptcha, 500);
+      }
+    };
+
+    loadRecaptcha();
+
+    return () => {
+      setIsRecaptchaLoaded(false);
+    };
   }, []);
 
   const submit = async (values: FormValues) => {
     try {
       setIsSubmitted(false);
+      setSubmitSuccess(false);
 
-      // Only proceed if reCAPTCHA is loaded
       if (!isRecaptchaLoaded) {
-        throw new Error('reCAPTCHA not loaded');
+        await new Promise((resolve) => {
+          const checkRecaptcha = () => {
+            if (isRecaptchaLoaded) {
+              resolve(true);
+            } else {
+              setTimeout(checkRecaptcha, 100);
+            }
+          };
+          checkRecaptcha();
+        });
       }
 
-      // Get reCAPTCHA token
       const token = await window.grecaptcha.execute(
         process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
         { action: 'contact_form_submit' }
       );
 
-      // Add token to the form data
       const formData = {
         ...values,
         recaptchaToken: token
@@ -76,18 +96,18 @@ const ContactForm = () => {
         method: 'POST'
       });
 
-      reset();
-
       if (response?.status === 200) {
-        setIsSubmitted(true);
+        reset();
+        setSubmitSuccess(true);
       } else {
-        setIsSubmitted(true);
-        throw { message: 'error' };
+        setSubmitSuccess(false);
       }
+
+      setIsSubmitted(true);
     } catch (error) {
       console.error('Form submission error:', error);
+      setSubmitSuccess(false);
       setIsSubmitted(true);
-      throw { message: 'error' };
     }
   };
 
@@ -120,11 +140,15 @@ const ContactForm = () => {
           name="message"
           rules={{ required: 'Molimo unesite poruku' }}
         />
-        <Button className="!py-3 !px-16 rounded-md" isSubmitting={isSubmitting}>
+        <Button
+          className="!py-3 !px-16 rounded-md"
+          disabled={!isRecaptchaLoaded}
+          isSubmitting={isSubmitting}
+        >
           Pošaljite
         </Button>
       </Form>
-      {isSubmitted && <Snackbar isSubmitSuccessful={isSubmitSuccessful} />}
+      {isSubmitted && <Snackbar isSubmitSuccessful={submitSuccess} />}
     </>
   );
 };
