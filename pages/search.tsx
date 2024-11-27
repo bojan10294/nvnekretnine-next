@@ -12,7 +12,7 @@ const Search = () => (
     <MiniHero
       alt="Građevinsko preduzeće"
       bgImageSrc="/img/sales.jpg"
-      title="Apartmani u ponudi"
+      title="Nekretnine u ponudi"
     />
     <Listing />
     <Footer />
