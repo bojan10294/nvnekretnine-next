@@ -66,7 +66,7 @@ export default async function handler(
         <p>Poruka: <strong>${message}</strong></p>
       `,
       subject: `NV Nekretnine Kontakt - ${name}`,
-      to: 'bojan.site@gmail.com'
+      to: 'nvnekretnine@gmail.com'
     });
 
     if (emailError) {
