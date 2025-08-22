@@ -19,7 +19,7 @@ export default async function tryCatch(url: string, param?: string) {
 // export const url = 'http://127.0.0.1:1337/api'
 export const url = 'https://hammerhead-app-ko42k.ondigitalocean.app/api';
 
-export const getAllApartments = () => tryCatch(`${url}/apartments`);
+export const getAllApartments = () => tryCatch(`${url}/apartments?pagination[pageSize]=1000`);
 
 export const getApartmentContentType = () =>
   tryCatch(
