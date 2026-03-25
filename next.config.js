@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
+// Netlify's IPX/Lambda layer can fail to load sharp/libvips (libvips-cpp.so.42).
+// Cloudinary URLs already support on-the-fly transforms; skip /_next/image on Netlify.
+const isNetlify = process.env.NETLIFY === 'true';
+
 const nextConfig = {
   images: {
     domains: [
@@ -9,6 +13,7 @@ const nextConfig = {
       'nvnekretnine.rs',
       'res.cloudinary.com',
     ],
+    unoptimized: isNetlify,
   },
   output: 'standalone',
   reactStrictMode: true
