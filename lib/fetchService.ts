@@ -33,7 +33,7 @@ export const getApartments = (location: string) =>
   );
 
 export const getSingleApartment = (apartment: string) =>
-  tryCatch(`${url}/apartments?populate=*&filters[Naziv][$eq]=`, apartment);
+  tryCatch(`${url}/apartments?populate=*&filters[Naziv][$containsi]=${encodeURIComponent(apartment)}`);
 
 export const getLocations = () => tryCatch(`${url}/locations?populate=*`);
 
