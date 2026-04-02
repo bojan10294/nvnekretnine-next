@@ -15,7 +15,9 @@ export default function Home() {
   const { data } = useQuery(['apartment', apartment], () =>
     getSingleApartment(apartment as string)
   );
-  const apartmentData = data.data[0];
+  const apartmentData = data?.data?.[0];
+
+  if (!apartmentData) return null;
 
   return (
     <>
@@ -37,7 +39,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const apartments = await getAllApartments();
 
   const paths = apartments.data.map((apartment: any) => ({
-    params: { apartment: apartment.attributes.Naziv }
+    params: { apartment: apartment.attributes.Naziv.trim() }
   }));
 
   return { fallback: false, paths };
